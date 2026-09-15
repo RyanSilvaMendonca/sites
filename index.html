@@ -1,0 +1,2545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Estação Hamburgueria | Hambúrguer em Maiobão - Paço do Lumiar</title>
+
+  <meta
+    name="description"
+    content="Estação Hamburgueria no Maiobão, Paço do Lumiar - MA. Hambúrgueres, lanches, pratos e muito sabor. Confira o cardápio, localização e faça seu pedido."
+  />
+
+  <meta
+    name="keywords"
+    content="Hamburgueria em Maiobão, Hambúrguer em Paço do Lumiar, Lanchonete Maiobão, Hambúrguer artesanal, Estação Hamburgueria, Lanches em Paço do Lumiar"
+  />
+
+  <meta name="theme-color" content="#111111" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --black: #0b0b0b;
+      --dark: #111111;
+      --dark-2: #181818;
+      --dark-3: #222222;
+      --red: #e21b23;
+      --red-dark: #a80f15;
+      --yellow: #ffc400;
+      --white: #ffffff;
+      --gray: #a9a9a9;
+      --light: #f4f4f4;
+      --border: rgba(255,255,255,.09);
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 20px;
+      --max: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8,8,8,.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      transition: .3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(8,8,8,.97);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: .82;
+      flex-shrink: 0;
+    }
+
+    .logo span:first-child {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 30px;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .logo span:last-child {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: var(--red);
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ddd;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: var(--red);
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 23px;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .5px;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .btn-red {
+      color: white;
+      background: var(--red);
+      box-shadow: 0 8px 25px rgba(226,27,35,.25);
+    }
+
+    .btn-red:hover {
+      background: #ff272f;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(226,27,35,.38);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.25);
+      color: white;
+      background: rgba(255,255,255,.04);
+    }
+
+    .btn-outline:hover {
+      border-color: white;
+      background: white;
+      color: #111;
+      transform: translateY(-3px);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      color: white;
+      border: 0;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(5,5,5,.98) 0%, rgba(5,5,5,.88) 43%, rgba(5,5,5,.2) 100%),
+        url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2000&q=90")
+        center/cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: rgba(226,27,35,.18);
+      filter: blur(100px);
+      border-radius: 50%;
+      right: -200px;
+      bottom: -200px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 150px 0 100px;
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--yellow);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .hero h1 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(64px, 8vw, 108px);
+      line-height: .85;
+      letter-spacing: 1px;
+      max-width: 700px;
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero-description {
+      max-width: 570px;
+      color: #d1d1d1;
+      line-height: 1.75;
+      margin: 25px 0 30px;
+      font-size: 16px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 35px;
+      margin-top: 55px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hero-stat strong {
+      font-size: 23px;
+    }
+
+    .hero-stat span {
+      color: #aaa;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      color: var(--yellow);
+      letter-spacing: 2px;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      position: relative;
+      padding: 110px 0;
+    }
+
+    .section-dark {
+      background: var(--dark);
+    }
+
+    .section-black {
+      background: var(--black);
+    }
+
+    .section-red {
+      background:
+        linear-gradient(120deg, #8e090e, #e21b23 55%, #a90e14);
+    }
+
+    .section-heading {
+      margin-bottom: 50px;
+    }
+
+    .section-heading.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 700px;
+    }
+
+    .section-heading .mini {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(45px, 6vw, 70px);
+      line-height: .9;
+      letter-spacing: .5px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+      margin-top: 18px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .feature {
+      background: linear-gradient(145deg, #1b1b1b, #101010);
+      border: 1px solid var(--border);
+      padding: 30px 24px;
+      border-radius: var(--radius);
+      transition: .3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-8px);
+      border-color: rgba(226,27,35,.5);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(226,27,35,.12);
+      color: var(--red);
+      font-size: 21px;
+      margin-bottom: 22px;
+    }
+
+    .feature h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #929292;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .tab {
+      border: 1px solid rgba(255,255,255,.12);
+      color: #aaa;
+      background: transparent;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .tab.active,
+    .tab:hover {
+      background: var(--red);
+      color: white;
+      border-color: var(--red);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: #151515;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: .3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .menu-image {
+      height: 245px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .menu-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .menu-card:hover .menu-image img {
+      transform: scale(1.07);
+    }
+
+    .edit-badge {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      background: var(--yellow);
+      color: #111;
+      padding: 7px 10px;
+      border-radius: 7px;
+      font-size: 9px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .menu-info {
+      padding: 22px;
+    }
+
+    .menu-info h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .menu-info p {
+      color: #8f8f8f;
+      font-size: 12px;
+      line-height: 1.6;
+      min-height: 39px;
+    }
+
+    .menu-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 18px;
+    }
+
+    .price {
+      color: var(--yellow);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .menu-link {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    /* =========================
+       FEATURE PRODUCT
+    ========================= */
+
+    .feature-product {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .product-image {
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 30px;
+      box-shadow: 30px 30px 0 rgba(226,27,35,.12);
+    }
+
+    .product-tag {
+      position: absolute;
+      right: -20px;
+      top: 30px;
+      background: var(--yellow);
+      color: #111;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+    }
+
+    .product-copy .mini {
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 900;
+      font-size: 11px;
+    }
+
+    .product-copy h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(50px, 6vw, 75px);
+      line-height: .9;
+      margin: 15px 0 20px;
+    }
+
+    .product-copy p {
+      color: #999;
+      line-height: 1.8;
+      max-width: 550px;
+      margin-bottom: 25px;
+    }
+
+    .product-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .product-point {
+      background: #191919;
+      border: 1px solid var(--border);
+      padding: 10px 13px;
+      border-radius: 8px;
+      font-size: 11px;
+      color: #ccc;
+    }
+
+    /* =========================
+       REVIEWS
+    ========================= */
+
+    .reviews-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .rating-big {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .rating-number {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 80px;
+      line-height: .7;
+    }
+
+    .rating-info {
+      color: #999;
+      font-size: 12px;
+    }
+
+    .rating-info .stars {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .review {
+      background: #151515;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 27px;
+    }
+
+    .review-stars {
+      color: var(--yellow);
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .review p {
+      color: #ccc;
+      line-height: 1.7;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #292929;
+      color: white;
+      font-weight: 900;
+    }
+
+    .review-author strong {
+      font-size: 12px;
+    }
+
+    .review-author span {
+      display: block;
+      color: #777;
+      font-size: 10px;
+      margin-top: 3px;
+    }
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr .8fr;
+      grid-template-rows: 240px 240px;
+      gap: 12px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 16px;
+      position: relative;
+      background: #222;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+      background: rgba(0,0,0,.7);
+      backdrop-filter: blur(10px);
+      padding: 7px 11px;
+      border-radius: 7px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 500px;
+      border-radius: 25px;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-copy p {
+      color: #999;
+      line-height: 1.8;
+      margin: 20px 0 30px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .service {
+      padding: 15px;
+      background: #171717;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      color: #ccc;
+      font-size: 12px;
+    }
+
+    .service i {
+      color: var(--red);
+      margin-right: 7px;
+    }
+
+    /* =========================
+       LOCATION
+    ========================= */
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 25px;
+    }
+
+    .location-card {
+      background: #171717;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 35px;
+    }
+
+    .location-card h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .location-row {
+      display: flex;
+      gap: 15px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .location-row:last-child {
+      border-bottom: 0;
+    }
+
+    .location-row i {
+      color: var(--red);
+      width: 20px;
+      padding-top: 2px;
+    }
+
+    .location-row strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .location-row span {
+      color: #888;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .map {
+      min-height: 420px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #1b1b1b;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+      filter: grayscale(.7) contrast(1.1);
+    }
+
+    /* =========================
+       CONTACT CTA
+    ========================= */
+
+    .contact-cta {
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .contact-cta .mini {
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-weight: 900;
+      color: var(--yellow);
+    }
+
+    .contact-cta h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(55px, 8vw, 90px);
+      line-height: .9;
+      margin: 15px auto;
+    }
+
+    .contact-cta p {
+      color: rgba(255,255,255,.8);
+      margin-bottom: 30px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .contact-buttons .btn-outline {
+      background: rgba(0,0,0,.15);
+      border-color: rgba(255,255,255,.35);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #070707;
+      border-top: 1px solid var(--border);
+      padding: 65px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 50px;
+    }
+
+    .footer-description {
+      color: #777;
+      font-size: 12px;
+      line-height: 1.8;
+      max-width: 300px;
+      margin-top: 18px;
+    }
+
+    .footer-col h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      color: #777;
+      font-size: 12px;
+      transition: .2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--red);
+    }
+
+    .socials {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .social {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #151515;
+      display: grid;
+      place-items: center;
+      color: #aaa;
+      transition: .2s;
+    }
+
+    .social:hover {
+      background: var(--red);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #555;
+      font-size: 10px;
+    }
+
+    /* =========================
+       FLOATING WHATSAPP
+    ========================= */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      z-index: 900;
+      box-shadow: 0 10px 35px rgba(37,211,102,.35);
+      animation: pulse 2.5s infinite;
+    }
+
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 70px;
+      white-space: nowrap;
+      background: #111;
+      border: 1px solid #333;
+      padding: 10px 13px;
+      border-radius: 8px;
+      font-size: 10px;
+      font-weight: 800;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(10px);
+      transition: .2s;
+    }
+
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,.3);
+      }
+      50% {
+        box-shadow: 0 0 0 14px rgba(37,211,102,0);
+      }
+    }
+
+    /* =========================
+       MOBILE BAR
+    ========================= */
+
+    .mobile-bar {
+      display: none;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature-product,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        max-width: 650px;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+
+      body {
+        padding-bottom: 65px;
+      }
+
+      header {
+        height: 70px;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .nav-links,
+      .nav > .btn {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links.open {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 20px;
+        background: #0b0b0b;
+        border-bottom: 1px solid #222;
+      }
+
+      .nav-links.open li a {
+        display: block;
+        padding: 14px 0;
+      }
+
+      .nav-links.open a::after {
+        display: none;
+      }
+
+      .hero {
+        min-height: 850px;
+        background:
+          linear-gradient(180deg, rgba(5,5,5,.72), rgba(5,5,5,.98) 75%),
+          url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=85")
+          center/cover no-repeat;
+      }
+
+      .hero-content {
+        padding: 130px 0 70px;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .hero-stats {
+        margin-top: 35px;
+        gap: 20px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .features,
+      .menu-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-image {
+        height: 260px;
+      }
+
+      .product-image img {
+        height: 400px;
+      }
+
+      .product-tag {
+        right: 10px;
+      }
+
+      .reviews-header {
+        display: block;
+      }
+
+      .rating-big {
+        margin-top: 30px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 150px 150px;
+      }
+
+      .gallery-item:first-child {
+        grid-row: span 2;
+      }
+
+      .gallery-item:last-child {
+        grid-column: span 2;
+      }
+
+      .about-image {
+        height: 360px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .location-card {
+        padding: 25px;
+      }
+
+      .map iframe {
+        min-height: 350px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .whatsapp-float {
+        right: 18px;
+        bottom: 82px;
+      }
+
+      .whatsapp-tooltip {
+        display: none;
+      }
+
+      .mobile-bar {
+        position: fixed;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 65px;
+        z-index: 950;
+        background: rgba(10,10,10,.97);
+        border-top: 1px solid #292929;
+        backdrop-filter: blur(15px);
+      }
+
+      .mobile-bar a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        color: #aaa;
+        font-size: 9px;
+        font-weight: 900;
+      }
+
+      .mobile-bar a i {
+        font-size: 17px;
+      }
+
+      .mobile-bar a:nth-child(2) {
+        color: #25d366;
+      }
+
+      .mobile-bar a:hover {
+        color: white;
+      }
+    }
+  </style>
+
+  <!-- Dados estruturados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Estação Hamburgueria",
+    "servesCuisine": "Hambúrguer",
+    "priceRange": "R$ 20–40",
+    "telephone": "+55 98 98553-6785",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Doze, 1 - Maiobão",
+      "addressLocality": "Paço do Lumiar",
+      "addressRegion": "MA",
+      "postalCode": "65130-000",
+      "addressCountry": "BR"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": "563"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header id="header">
+    <div class="container nav">
+
+      <a href="#inicio" class="logo" aria-label="Estação Hamburgueria">
+        <span>ESTAÇÃO</span>
+        <span>HAMBURGUERIA</span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#avaliacoes">Avaliações</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a
+        class="btn btn-red"
+        href="https://wa.me/5598985536785?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Esta%C3%A7%C3%A3o%20Hamburgueria%20e%20gostaria%20de%20fazer%20um%20pedido."
+        target="_blank"
+        rel="noopener"
+      >
+        PEDIR AGORA
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="inicio">
+      <div class="container">
+
+        <div class="hero-content reveal">
+
+          <div class="eyebrow">
+            MAIOBÃO • PAÇO DO LUMIAR
+          </div>
+
+          <h1>
+            O sabor que faz sua
+            <span>parada</span> valer a pena.
+          </h1>
+
+          <p class="hero-description">
+            Hambúrgueres, lanches e pratos preparados com muito sabor
+            no coração do Maiobão. Uma experiência urbana, descontraída
+            e feita para matar a fome de verdade.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#cardapio" class="btn btn-red">
+              <i class="fa-solid fa-utensils"></i>
+              VER CARDÁPIO
+            </a>
+
+            <a
+              href="https://wa.me/5598985536785?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Esta%C3%A7%C3%A3o%20Hamburgueria%20e%20gostaria%20de%20fazer%20um%20pedido."
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              PEDIR PELO WHATSAPP
+            </a>
+
+          </div>
+
+          <div class="hero-stats">
+
+            <div class="hero-stat">
+              <strong class="stars">★★★★★</strong>
+              <span>4,5 estrelas</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>+563</strong>
+              <span>Avaliações</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>R$ 20–40</strong>
+              <span>Por pessoa</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         DESTAQUES
+    ========================== -->
+
+    <section class="section-dark">
+      <div class="container">
+
+        <div class="section-heading center reveal">
+          <div class="mini">Experiência Estação</div>
+          <h2>Por que escolher a Estação?</h2>
+          <p>
+            Um lugar para comer bem, encontrar os amigos e curtir
+            uma experiência descontraída no Maiobão.
+          </p>
+        </div>
+
+        <div class="features">
+
+          <article class="feature reveal">
+            <div class="feature-icon">
+              <i class="fa-solid fa-burger"></i>
+            </div>
+            <h3>Hambúrguer artesanal</h3>
+            <p>
+              Lanches preparados com ingredientes saborosos e
+              combinações especiais.
+            </p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature-icon">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <h3>Comida feita com carinho</h3>
+            <p>
+              Uma experiência simples, saborosa e acolhedora.
+            </p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature-icon">
+              <i class="fa-solid fa-couch"></i>
+            </div>
+            <h3>Ambiente agradável</h3>
+            <p>
+              Um espaço aconchegante para comer com amigos,
+              família ou sozinho.
+            </p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature-icon">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3>Para todos</h3>
+            <p>
+              Ambiente acolhedor e seguro para a comunidade.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CARDÁPIO
+    ========================== -->
+
+    <section class="section-black" id="cardapio">
+      <div class="container">
+
+        <div class="section-heading center reveal">
+          <div class="mini">Nosso cardápio</div>
+          <h2>Escolha sua próxima parada</h2>
+          <p>
+            Conheça alguns dos destaques. O cardápio completo pode
+            ser atualizado com os produtos e preços oficiais.
+          </p>
+        </div>
+
+        <div class="menu-tabs">
+
+          <button class="tab active" data-category="todos">
+            Todos
+          </button>
+
+          <button class="tab" data-category="hamburgueres">
+            Hambúrgueres
+          </button>
+
+          <button class="tab" data-category="combos">
+            Combos
+          </button>
+
+          <button class="tab" data-category="porcoes">
+            Porções
+          </button>
+
+          <button class="tab" data-category="pratos">
+            Pratos
+          </button>
+
+          <button class="tab" data-category="bebidas">
+            Bebidas
+          </button>
+
+        </div>
+
+        <div class="menu-grid">
+
+          <article class="menu-card reveal" data-category="hamburgueres">
+
+            <div class="menu-image">
+              <img
+                src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85"
+                alt="Hambúrguer artesanal"
+                loading="lazy"
+              />
+              <span class="edit-badge">Destaque</span>
+            </div>
+
+            <div class="menu-info">
+              <h3>Estação Picanha</h3>
+              <p>
+                Um dos destaques mencionados positivamente pelos clientes.
+              </p>
+
+              <div class="menu-bottom">
+                <span class="price">Consultar cardápio</span>
+                <span class="menu-link">DESTAQUE</span>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="menu-card reveal" data-category="hamburgueres">
+
+            <div class="menu-image">
+              <img
+                src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=900&q=85"
+                alt="Hambúrguer artesanal com queijo"
+                loading="lazy"
+              />
+              <span class="edit-badge">Editável</span>
+            </div>
+
+            <div class="menu-info">
+              <h3>Hambúrguer</h3>
+              <p>
+                Produto do cardápio. Substitua esta descrição
+                pelos dados oficiais.
+              </p>
+
+              <div class="menu-bottom">
+                <span class="price">Consultar cardápio</span>
+                <span class="menu-link">EDITAR</span>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="menu-card reveal" data-category="combos">
+
+            <div class="menu-image">
+              <img
+                src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=900&q=85"
+                alt="Combo de hambúrguer e batata"
+                loading="lazy"
+              />
+              <span class="edit-badge">Editável</span>
+            </div>
+
+            <div class="menu-info">
+              <h3>Combo</h3>
+              <p>
+                Área preparada para cadastrar os combos oficiais
+                da Estação Hamburgueria.
+              </p>
+
+              <div class="menu-bottom">
+                <span class="price">Consultar cardápio</span>
+                <span class="menu-link">EDITAR</span>
+              </div>
+            </div>
+
+          </article>
+
+        </div>
+
+        <div style="text-align:center; margin-top:40px;">
+
+          <!-- Substitua # pelo endereço real do cardápio online -->
+          <a
+            href="#"
+            class="btn btn-outline"
+            onclick="alert('Adicione aqui o link oficial do cardápio online.'); return false;"
+          >
+            VER CARDÁPIO COMPLETO
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         PRODUTO DESTAQUE
+    ========================== -->
+
+    <section class="section-dark">
+
+      <div class="container feature-product">
+
+        <div class="product-image reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1100&q=90"
+            alt="Hambúrguer artesanal Estação Picanha"
+            loading="lazy"
+          />
+
+          <div class="product-tag">
+            ★ DESTAQUE
+          </div>
+
+        </div>
+
+        <div class="product-copy reveal">
+
+          <div class="mini">O queridinho da Estação</div>
+
+          <h2>Estação Picanha</h2>
+
+          <p>
+            O Estação Picanha é um dos hambúrgueres mais comentados
+            pelos clientes. Uma escolha para quem quer transformar
+            a fome em uma experiência de sabor.
+          </p>
+
+          <div class="product-points">
+            <span class="product-point">
+              <i class="fa-solid fa-star"></i> Bem avaliado
+            </span>
+
+            <span class="product-point">
+              <i class="fa-solid fa-burger"></i> Hambúrguer
+            </span>
+
+            <span class="product-point">
+              <i class="fa-solid fa-fire"></i> Destaque
+            </span>
+          </div>
+
+          <a
+            href="https://wa.me/5598985536785?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20Estação%20Picanha."
+            target="_blank"
+            rel="noopener"
+            class="btn btn-red"
+          >
+            QUERO EXPERIMENTAR
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         AVALIAÇÕES
+    ========================== -->
+
+    <section class="section-black" id="avaliacoes">
+
+      <div class="container">
+
+        <div class="reviews-header reveal">
+
+          <div class="section-heading" style="margin-bottom:0;">
+            <div class="mini">Avaliações</div>
+            <h2>Quem prova, recomenda.</h2>
+            <p>
+              Experiências compartilhadas por clientes da Estação.
+            </p>
+          </div>
+
+          <div class="rating-big">
+
+            <div class="rating-number">4,5</div>
+
+            <div class="rating-info">
+              <span class="stars">★★★★★</span>
+              <span>563 avaliações</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="reviews-grid">
+
+          <article class="review reveal">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+              "Ótimo lugar pra jantar/lanchar. Atendimento TOP e
+              ambiente muito bom e seguro."
+            </p>
+
+            <div class="review-author">
+              <div class="avatar">C</div>
+              <div>
+                <strong>Cliente</strong>
+                <span>Avaliação pública</span>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="review reveal">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+              "Comida deliciosa, preços bons."
+            </p>
+
+            <div class="review-author">
+              <div class="avatar">C</div>
+              <div>
+                <strong>Cliente</strong>
+                <span>Avaliação pública</span>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="review reveal">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+              "Ambiente agradável, aconchegante, comida boa e
+              atendimento bom!"
+            </p>
+
+            <div class="review-author">
+              <div class="avatar">J</div>
+              <div>
+                <strong>Jo Coelho</strong>
+                <span>Avaliação pública</span>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="review reveal">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+              "A melhor macarronada de frango que já comi. Não enjôo,
+              se pedir todo dia pois todo dia eu como."
+            </p>
+
+            <div class="review-author">
+              <div class="avatar">V</div>
+              <div>
+                <strong>Vitória Souza</strong>
+                <span>Avaliação pública</span>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="review reveal">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+              "Comida boa e ambiente agradável. Uma experiência
+              que vale a pena conhecer."
+            </p>
+
+            <div class="review-author">
+              <div class="avatar">C</div>
+              <div>
+                <strong>Cliente</strong>
+                <span>Avaliação pública</span>
+              </div>
+            </div>
+
+          </article>
+
+          <article class="review reveal">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+              "O Estação Picanha é o melhor. Uma sugestão é pedir
+              o lanche por telefone."
+            </p>
+
+            <div class="review-author">
+              <div class="avatar">C</div>
+              <div>
+                <strong>Cliente</strong>
+                <span>Avaliação pública</span>
+              </div>
+            </div>
+
+          </article>
+
+        </div>
+
+        <div style="text-align:center; margin-top:40px;">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Estacao+Hamburgueria+Maiobao+Paco+do+Lumiar"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline"
+          >
+            VER TODAS AS AVALIAÇÕES
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         GALERIA
+    ========================== -->
+
+    <section class="section-dark">
+
+      <div class="container">
+
+        <div class="section-heading center reveal">
+          <div class="mini">Experiência</div>
+          <h2>Uma parada para sentir o sabor</h2>
+          <p>
+            Imagens de referência para a apresentação visual do site.
+            Substitua pelas fotos oficiais da hamburgueria.
+          </p>
+        </div>
+
+        <div class="gallery">
+
+          <div class="gallery-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=85"
+              alt="Hambúrguer"
+              loading="lazy"
+            />
+            <span class="gallery-label">Hambúrguer</span>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=900&q=85"
+              alt="Gastronomia"
+              loading="lazy"
+            />
+            <span class="gallery-label">Gastronomia</span>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=900&q=85"
+              alt="Batatas"
+              loading="lazy"
+            />
+            <span class="gallery-label">Cardápio</span>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85"
+              alt="Ambiente de restaurante"
+              loading="lazy"
+            />
+            <span class="gallery-label">Ambiente</span>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=85"
+              alt="Hambúrguer com bacon"
+              loading="lazy"
+            />
+            <span class="gallery-label">Bacon</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         SOBRE
+    ========================== -->
+
+    <section class="section-black" id="sobre">
+
+      <div class="container about">
+
+        <div class="about-image reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1100&q=85"
+            alt="Ambiente de hamburgueria"
+            loading="lazy"
+          />
+
+        </div>
+
+        <div class="about-copy reveal">
+
+          <div class="section-heading" style="margin-bottom:0;">
+            <div class="mini">Sobre a Estação</div>
+
+            <h2>
+              Mais que um lanche.
+              Uma parada para curtir.
+            </h2>
+          </div>
+
+          <p>
+            A Estação Hamburgueria é um espaço localizado no Maiobão,
+            em Paço do Lumiar, criado para quem gosta de comida saborosa,
+            ambiente agradável e uma experiência descontraída.
+          </p>
+
+          <div class="services">
+
+            <div class="service">
+              <i class="fa-solid fa-circle-check"></i>
+              Refeição no local
+            </div>
+
+            <div class="service">
+              <i class="fa-solid fa-bag-shopping"></i>
+              Para viagem
+            </div>
+
+            <div class="service">
+              <i class="fa-solid fa-truck"></i>
+              Entrega sem contato
+            </div>
+
+            <div class="service">
+              <i class="fa-solid fa-heart"></i>
+              Ambiente acolhedor
+            </div>
+
+            <div class="service">
+              <i class="fa-brands fa-whatsapp"></i>
+              Atendimento via WhatsApp
+            </div>
+
+            <div class="service">
+              <i class="fa-solid fa-people-group"></i>
+              Espaço para todos
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         LOCALIZAÇÃO
+    ========================== -->
+
+    <section class="section-dark" id="localizacao">
+
+      <div class="container">
+
+        <div class="section-heading center reveal">
+          <div class="mini">Onde estamos</div>
+          <h2>Chegue até a Estação</h2>
+          <p>
+            Estamos no Maiobão, em Paço do Lumiar - MA.
+          </p>
+        </div>
+
+        <div class="location-grid">
+
+          <div class="location-card reveal">
+
+            <h3>Visite a gente</h3>
+
+            <div class="location-row">
+
+              <i class="fa-solid fa-location-dot"></i>
+
+              <div>
+                <strong>Endereço</strong>
+                <span>
+                  R. Doze, 1 - Maiobão<br />
+                  Paço do Lumiar - MA<br />
+                  CEP 65130-000
+                </span>
+              </div>
+
+            </div>
+
+            <div class="location-row">
+
+              <i class="fa-solid fa-location-crosshairs"></i>
+
+              <div>
+                <strong>Plus Code</strong>
+                <span>
+                  FR2H+88 Maiobão, Paço do Lumiar - MA
+                </span>
+              </div>
+
+            </div>
+
+            <div class="location-row">
+
+              <i class="fa-solid fa-clock"></i>
+
+              <div>
+                <strong>Horário informado</strong>
+                <span>
+                  Aberto até 00:00
+                </span>
+              </div>
+
+            </div>
+
+            <div class="location-row">
+
+              <i class="fa-solid fa-phone"></i>
+
+              <div>
+                <strong>Telefone / WhatsApp</strong>
+                <span>
+                  (98) 98553-6785
+                </span>
+              </div>
+
+            </div>
+
+            <br />
+
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=R.%20Doze%2C%201%20-%20Maiob%C3%A3o%2C%20Pa%C3%A7o%20do%20Lumiar%20-%20MA%2C%2065130-000"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-red"
+            >
+              <i class="fa-solid fa-route"></i>
+              ABRIR ROTAS
+            </a>
+
+          </div>
+
+          <div class="map reveal">
+
+            <iframe
+              title="Mapa - Estação Hamburgueria"
+              src="https://www.google.com/maps?q=R.%20Doze%2C%201%20-%20Maiob%C3%A3o%2C%20Pa%C3%A7o%20do%20Lumiar%20-%20MA%2C%2065130-000&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         CONTATO CTA
+    ========================== -->
+
+    <section class="section-red" id="contato">
+
+      <div class="container contact-cta reveal">
+
+        <div class="mini">Bateu a fome?</div>
+
+        <h2>Chama a Estação.</h2>
+
+        <p>
+          Faça seu pedido ou entre em contato pelo WhatsApp.
+        </p>
+
+        <div class="contact-buttons">
+
+          <a
+            href="https://wa.me/5598985536785?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Esta%C3%A7%C3%A3o%20Hamburgueria%20e%20gostaria%20de%20fazer%20um%20pedido."
+            target="_blank"
+            rel="noopener"
+            class="btn"
+            style="background:#25d366;color:white;"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            CHAMAR NO WHATSAPP
+          </a>
+
+          <a
+            href="#cardapio"
+            class="btn btn-outline"
+          >
+            <i class="fa-solid fa-utensils"></i>
+            PEDIR ONLINE
+          </a>
+
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=R.%20Doze%2C%201%20-%20Maiob%C3%A3o%2C%20Pa%C3%A7o%20do%20Lumiar%20-%20MA%2C%2065130-000"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline"
+          >
+            <i class="fa-solid fa-location-dot"></i>
+            VER LOCALIZAÇÃO
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-col">
+
+          <a href="#inicio" class="logo">
+            <span>ESTAÇÃO</span>
+            <span>HAMBURGUERIA</span>
+          </a>
+
+          <p class="footer-description">
+            Seu ponto de parada para comer bem no Maiobão.
+            Hambúrgueres, lanches e uma experiência descontraída.
+          </p>
+
+          <div class="socials">
+
+            <a
+              href="https://wa.me/5598985536785"
+              target="_blank"
+              rel="noopener"
+              class="social"
+              aria-label="WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <!-- Adicione o Instagram oficial quando disponível -->
+            <a
+              href="#"
+              class="social"
+              aria-label="Instagram"
+              onclick="alert('Adicione aqui o Instagram oficial da empresa.'); return false;"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Estacao+Hamburgueria+Maiobao+Paco+do+Lumiar"
+              target="_blank"
+              rel="noopener"
+              class="social"
+              aria-label="Google Maps"
+            >
+              <i class="fa-solid fa-map-location-dot"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h4>Navegação</h4>
+
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#cardapio">Cardápio</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#avaliacoes">Avaliações</a></li>
+          </ul>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h4>Localização</h4>
+
+          <p>
+            R. Doze, 1 - Maiobão<br />
+            Paço do Lumiar - MA<br />
+            CEP 65130-000
+          </p>
+
+          <br />
+
+          <p>
+            FR2H+88 Maiobão
+          </p>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h4>Contato</h4>
+
+          <ul>
+            <li>
+              <a href="tel:+5598985536785">
+                (98) 98553-6785
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://wa.me/5598985536785"
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp
+              </a>
+            </li>
+
+            <li>
+              <span style="color:#777;font-size:12px;">
+                Aberto até 00:00
+              </span>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <span>
+          © <span id="year"></span> Estação Hamburgueria.
+          Todos os direitos reservados.
+        </span>
+
+        <span>
+          Maiobão • Paço do Lumiar - MA
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- =========================
+       WHATSAPP FLUTUANTE
+  ========================== -->
+
+  <a
+    href="https://wa.me/5598985536785?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Esta%C3%A7%C3%A3o%20Hamburgueria%20e%20gostaria%20de%20fazer%20um%20pedido."
+    target="_blank"
+    rel="noopener"
+    class="whatsapp-float"
+    aria-label="Pedir pelo WhatsApp"
+  >
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+    <span class="whatsapp-tooltip">
+      Pedir pelo WhatsApp
+    </span>
+
+  </a>
+
+  <!-- =========================
+       BARRA MOBILE
+  ========================== -->
+
+  <nav class="mobile-bar">
+
+    <a href="#cardapio">
+      <i class="fa-solid fa-burger"></i>
+      <span>CARDÁPIO</span>
+    </a>
+
+    <a
+      href="https://wa.me/5598985536785?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Esta%C3%A7%C3%A3o%20Hamburgueria%20e%20gostaria%20de%20fazer%20um%20pedido."
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>WHATSAPP</span>
+    </a>
+
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=R.%20Doze%2C%201%20-%20Maiob%C3%A3o%2C%20Pa%C3%A7o%20do%20Lumiar%20-%20MA%2C%2065130-000"
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fa-solid fa-route"></i>
+      <span>ROTAS</span>
+    </a>
+
+  </nav>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =========================
+       HEADER AO ROLAR
+    ========================== */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+
+    /* =========================
+       MENU MOBILE
+    ========================== */
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+      navLinks.classList.toggle("open");
+
+      const opened = navLinks.classList.contains("open");
+
+      menuToggle.setAttribute("aria-expanded", opened);
+
+      menuToggle.innerHTML = opened
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.innerHTML =
+          '<i class="fa-solid fa-bars"></i>';
+
+      });
+
+    });
+
+
+    /* =========================
+       FILTRO DO CARDÁPIO
+    ========================== */
+
+    const tabs = document.querySelectorAll(".tab");
+    const menuCards = document.querySelectorAll(".menu-card");
+
+    tabs.forEach(tab => {
+
+      tab.addEventListener("click", () => {
+
+        tabs.forEach(t => t.classList.remove("active"));
+
+        tab.classList.add("active");
+
+        const category = tab.dataset.category;
+
+        menuCards.forEach(card => {
+
+          if (
+            category === "todos" ||
+            card.dataset.category === category
+          ) {
+
+            card.style.display = "";
+
+            setTimeout(() => {
+              card.style.opacity = "1";
+              card.style.transform = "translateY(0)";
+            }, 10);
+
+          } else {
+
+            card.style.opacity = "0";
+            card.style.transform = "translateY(10px)";
+
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 200);
+
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+
+    /* =========================
+       ANO AUTOMÁTICO
+    ========================== */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* =========================
+       SMOOTH SCROLL
+    ========================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+      anchor.addEventListener("click", function(e) {
+
+        const target = document.querySelector(
+          this.getAttribute("href")
+        );
+
+        if (!target) return;
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth"
+        });
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
